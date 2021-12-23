@@ -1,0 +1,33 @@
+diff --git a/node_modules/@react-native-community/blur/android/build.gradle b/node_modules/@react-native-community/blur/android/build.gradle
+index 8177235..5d310b9 100644
+--- a/node_modules/@react-native-community/blur/android/build.gradle
++++ b/node_modules/@react-native-community/blur/android/build.gradle
+@@ -9,7 +9,6 @@ buildscript {
+     if (project == rootProject) {
+         repositories {
+             google()
+-            jcenter()
+         }
+ 
+         dependencies {
+@@ -37,11 +36,12 @@ android {
+ 
+ repositories {
+     google()
+-    jcenter()
++
++    maven { url 'https://jitpack.io' }
+ }
+ 
+ dependencies {
+     //noinspection GradleDynamicVersion
+     implementation 'com.facebook.react:react-native:+'
+-    implementation 'com.eightbitlab:blurview:1.6.3'
++    implementation 'com.github.Dimezis:BlurView:version-1.6.6'
+ }
+
+# Create patches folder in a project's root.
+# Create @react-native-community+blur+3.6.0.patch file there and fill it in as shown above.
+# Run yarn add -D patch-package postinstall-postinstall.
+# Add "postinstall": "patch-package" to scripts section in package.json.
+# Now after running yarn add/remove/etc., the patch file will be applied to the corresponding library.
